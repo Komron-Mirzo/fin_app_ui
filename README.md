@@ -1,6 +1,6 @@
-# fin_app_ui
+# FinApp UI
 
-A new Flutter project.
+Financial App UI
 
 ## Here is the outcome
 
