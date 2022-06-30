@@ -1,3 +1,4 @@
+import 'package:fin_app_ui/pages/Monitoring/monitoring_filter_page.dart';
 import 'package:fin_app_ui/widgets/monitoring_list_card.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -186,7 +187,7 @@ class _MonitoringPageState extends State<MonitoringPage> {
                           context,
                           MaterialPageRoute(
                             builder: (BuildContext context) =>
-                                const BellNotification(),
+                                const MonitoringFilterPage(),
                           ),
                         );
                       });

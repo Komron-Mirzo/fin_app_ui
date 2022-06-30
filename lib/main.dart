@@ -44,7 +44,7 @@ class _NavbarState extends State<Navbar> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = <Widget>[
-    MonitoringFilterPage(),
+    AsosiyPage(),
     TolovlarPage(),
     OtkazmaPage(),
     MonitoringPage(),

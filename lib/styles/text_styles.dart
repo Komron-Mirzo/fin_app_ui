@@ -62,4 +62,10 @@ class CustomTextStyle {
     color: AppColor.redTextColor,
     fontWeight: FontWeight.w900,
   );
+
+  static TextStyle bigBlackText = TextStyle(
+    fontSize: 18.0,
+    color: Colors.black,
+    fontWeight: FontWeight.w900,
+  );
 }
