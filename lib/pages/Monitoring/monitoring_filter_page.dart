@@ -1,5 +1,5 @@
-import 'package:fin_app_ui/pages/Monitoring/monitoring.dart';
 import 'package:flutter/material.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:date_time_picker/date_time_picker.dart';
 import '../../styles/colors.dart';
@@ -89,7 +89,6 @@ class _MonitoringFilterPageState extends State<MonitoringFilterPage> {
                 height: 60.0,
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: ListView.separated(
-                  shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) => InkWell(
@@ -254,10 +253,60 @@ class _MonitoringFilterPageState extends State<MonitoringFilterPage> {
               ),
               GestureDetector(
                 onTap: () {
-                  setState(() {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MyCards()));
-                  });
+                  showMaterialModalBottomSheet(
+                      bounce: true,
+                      expand: true,
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Padding(
+                          padding: const EdgeInsets.only(
+                            left: 30.0,
+                          ),
+                          child: Column(
+                            children: [
+                              const SizedBox(
+                                height: 20.0,
+                              ),
+                              Center(
+                                child: Container(
+                                  height: 4.0,
+                                  width: 50.0,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(
+                                      15.0,
+                                    ),
+                                    color: AppColor.greyTextColor,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 20.0,
+                              ),
+                              Center(
+                                child: Text(
+                                  "Toifalar",
+                                  style: CustomTextStyle.bigBlackText,
+                                ),
+                              ),
+                              Expanded(
+                                child: ListView.separated(
+                                  itemBuilder: (context, index) => Text(
+                                    "Toifa" + index.toString(),
+                                    style: const TextStyle(
+                                      fontSize: 18.0,
+                                    ),
+                                  ),
+                                  itemCount: 27,
+                                  separatorBuilder: (context, index) =>
+                                      const SizedBox(
+                                    height: 20.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      });
                 },
                 child: Row(
                   children: [

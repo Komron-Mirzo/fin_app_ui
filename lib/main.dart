@@ -1,7 +1,5 @@
 import 'dart:ui';
-
 import 'package:fin_app_ui/pages/Monitoring/monitoring.dart';
-import 'package:fin_app_ui/pages/Monitoring/monitoring_filter_page.dart';
 import 'package:fin_app_ui/pages/Otkazma/otkazma.dart';
 import 'package:fin_app_ui/pages/Tolovlar/tolovlar.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +46,11 @@ class _NavbarState extends State<Navbar> {
     TolovlarPage(),
     OtkazmaPage(),
     MonitoringPage(),
-    AsosiyPage(),
+    Container(
+      color: Colors.red,
+      height: 200.0,
+      width: 200.0,
+    ),
   ];
 
   void _onTappedPage(int index) {
@@ -110,7 +112,7 @@ class _NavbarState extends State<Navbar> {
               FontAwesomeIcons.commentDots,
               size: 20.0,
             ),
-            label: "Asosiy",
+            label: "Ko'proq",
           ),
         ],
       ),
